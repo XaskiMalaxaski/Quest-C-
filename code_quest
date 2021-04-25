@@ -1,0 +1,77 @@
+using System;
+
+namespace Quest
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool toOneUse = true; //переменная для одноразового условия (получение монет и медальона)
+            while (true)
+            {
+                Console.WriteLine("Добро пожаловать в мою игру.");
+                Console.WriteLine(" ");
+                Console.WriteLine("Для выбора действия введите в консоль цифру указанную в скобках.");
+                Console.WriteLine("Чтобы зафиксировать ваш выбор нажмите любую клавишу.");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine("Вы находитесь на дороге!");
+                Console.WriteLine(" ");
+                Console.WriteLine(" ");
+                Console.WriteLine("Перед Вами стоит выбор:");
+                Console.WriteLine(" ");
+                Console.WriteLine("Поговорить с бродягой (1)");
+                Console.WriteLine(" ");
+                Console.WriteLine("Осмотреть окрестности (2)");
+
+                int choise = int.Parse(Console.ReadLine());
+                for (; choise == 1;)
+                {
+                    Console.WriteLine("Бродяга:");
+
+                    if (toOneUse)
+                    {
+                        Console.WriteLine("Хочу предложить тебе эти предметы:");
+                        Console.WriteLine("<<<<<<");
+                        Console.WriteLine("Получено 50 монет и медальон! (y)");
+                        Console.WriteLine(">>>>>>");
+                        toOneUse = false;
+                    }
+
+                    else if (true)
+                    {
+                        Console.WriteLine(" ");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
+
+                    char talk = char.Parse(Console.ReadLine());
+                    if (talk == 'y')
+                    {
+                        Console.WriteLine("Монеты получены");
+                        Console.ReadKey();
+                        Console.Clear();
+                        break;
+                    }
+
+                }
+
+                if (choise == 2)
+                {
+                    Console.WriteLine("Дорога - это очень опасное место. Иначе, эта дорога не называлась бы - <Дорога>");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                else if (choise != 1 && choise != 2)
+                {
+                    Console.WriteLine("Неправильная цифра!");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
+                
+            }
+        }
+    }
+}
